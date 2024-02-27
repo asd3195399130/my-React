@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="" />
+    <script src=""></script>
+    <script src="https://cdn.staticfile.org/vue/2.7.0/vue.min.js"></script>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    #box {
+      position: relative;
+      width: 500px;
+      height: 50px;
+      margin: 100px auto;
+      border: 1px solid #ccc;
+    }
+    #username {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+    }
+    .bar {
+      display: inline-block;
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, -50%);
+      background-color: blue;
+      transition: 0.4s ease;
+    }
+    label {
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      left: 0px;
+      transition: 0.4s ease;
+      color: blue;
+      font-size:20px ;
+      font-weight: 900;
+    }
+    #box input:focus~.bar{
+      width: 100%;
+    }
+    #box input:valid~label,
+    #box input:focus~label{
+      color: #5264ae;
+      transform: translateY(-40px);
+      font-size: 14px;
+    }
+
+  </style>
+  <body>
+    <div id="box">
+      <input type="text" id="username" required/>
+      <span class="bar"></span>
+      <label for="username">User Name</label>
+    </div>
+  </body>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.js"></script>
+  <script></script>
+</html>
