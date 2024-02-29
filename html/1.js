@@ -138,8 +138,16 @@
 //   return this.name
 // }
 // console.log(person());
-var name = 'Jenny';
-function person() {
- return this.name;
-}
-console.log(person()); 
+// var name = 'Jenny';
+// function person() {
+//  return this.name;
+// }
+// console.log(person()); 
+const arr = [1,2,3]
+const newArr = arr.map(function(item){
+    return item*2
+})
+console.log(newArr);
+arr.forEach(function(item){
+    console.log(item);
+})
