@@ -1,126 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <title>Document</title>
-<link rel="stylesheet" href=''>
-<script src=''></script>
-<script src="https://cdn.staticfile.org/vue/2.7.0/vue.min.js"></script>
- <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
-<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
-<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
- </head>
-<style>
-    .logistics-trace {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-    }
-    .logistics-trace li {
-      width: 180px;
-      margin: 10px;
-      padding: 10px;
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      text-align: center;
-      position: relative;
-    }
-    .logistics-trace li:after {
-      content: "";
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      border: 2px solid #ddd;
-      background-color: #fff;
-      position: absolute;
-      top: -10px;
-      left: calc(50% - 10px);
-      z-index: 1;
-    }
-    .logistics-trace li:before {
-      content: "";
-      display: block;
-      width: 2px;
-      height: 100%;
-      border-left: 1px solid #ddd;
-      position: absolute;
-      top: 10px;
-      left: calc(50% - 1px);
-      z-index: 1;
-    }
-    .logistics-trace li:first-child:before {
-      display: none;
-    }
-    .logistics-trace li:last-child:after {
-      display: none;
-    }
-    .logistics-time {
-      font-size: 14px;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    .logistics-status {
-      font-size: 12px;
-      margin-bottom: 5px;
-    }
-    .logistics-desc {
-      font-size: 12px;
-    }
-    .logistics-status.accept {
-      color: green;
-    }
-    .logistics-status.transport {
-      color: blue;
-    }
-    .logistics-status.delivering {
-      color: red;
-    }
-  </style>
- <body>
-<div class="logistics-trace" id=""></div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style></style>
+<body>
+  
 </body>
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.js"></script>
-<script>
-    function generateLogisticsTrace(logisticsTraceData) {
-      const logisticsTraceDetailList = logisticsTraceData.logisticsTrace.logisticsTraceDetailList;
-      let logisticsTrace = '<ul>';
-      logisticsTraceDetailList.forEach((logisticsTraceDetail, index) => {
-        let logisticsStatus = '';
-        let logisticsStatusDesc = '';
-        let desc = logisticsTraceDetail.desc;
-        let time = new Date(logisticsTraceDetail.time).toLocaleString();
-        if (logisticsTraceDetail.subLogisticsStatus === 'ACCEPT') {
-          logisticsStatus = 'accept';
-          logisticsStatusDesc = '揽收';
-        } else if (logisticsTraceDetail.subLogisticsStatus === 'TRANSPORT') {
-          logisticsStatus = 'transport';
-          logisticsStatusDesc = '运输';
-        } else if (logisticsTraceDetail.subLogisticsStatus === 'DELIVERING') {
-          logisticsStatus = 'delivering';
-          logisticsStatusDesc = '派送';
-          desc = '【' + logisticsTraceDetail.areaName + '】' + logisticsTraceDetail.desc.replace('，', ',<br>投递员：');
-        }
-        logisticsTrace += `
-          <li class="${logisticsStatus}">
-            <div class="logistics-time">${time}</div>
-            <div class="logistics-status">${logisticsStatusDesc}</div>
-            <div class="logistics-desc">${desc}</div>
-          </li>
-        `;
-        if (index === logisticsTraceDetailList.length - 1) {
-          logisticsTrace += '</ul>';
-        }
-      });
-      return logisticsTrace;
-    }
-</script>
+<script></script>
 </html>

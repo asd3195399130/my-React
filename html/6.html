@@ -1,41 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<style>
-  h1{
-    width: 500px;
-    height: 500px;
-    background-color: reder;
-    font-size: 1rem;
-  }
-  #box{
-    content: "春晓";
-    width: 500px;
-    height: 500px;
-     font-size: 1rem;
-    background-color: red;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-  }
-</style>
-<body>
-  <h1>
-    123
-  </h1>
-  <div id="box"></div>
-</body>
-<script>
-  var name = 'Jenny';
-function person() {
- return this.name;
-}
-console.log(person()); 
-
-</script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="" />
+    <script src=""></script>
+    <script src="https://cdn.staticfile.org/vue/2.7.0/vue.min.js"></script>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      width: 1500px;
+      height: 500px;
+      border: 1px solid black;
+    }
+    #box {
+      width: 500px;
+      height: 500px;
+      font-size: 1rem;
+      background-color: red;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+    }
+    a{
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+  <body contenteditable="true">
+    <div id="box" contenteditable="true">
+      <a href="https://www.baidu.com/?tn=65081411_oem_dg">百度一下</a>
+    </div>
+  </body>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.js"></script>
+  <script>
+    document.getElementById("box").addEventListener("click", function(){
+      this.focus();
+      moveBy(100,200)
+      })
+  
+  </script>
 </html>
